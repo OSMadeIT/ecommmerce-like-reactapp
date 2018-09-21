@@ -6,6 +6,7 @@ class Counter extends Component {
   // };
 
   render() {
+    const { counter, onDelete, onIncrement } = this.props;
     return (
       <div className="container">
         {/* <img src={this.state.imageUrl} alt="" />
@@ -19,12 +20,12 @@ class Counter extends Component {
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           className="btn btn-secondary  btn-sm"
-          onClick={() => this.props.onIncrement(this.props.counter)}
+          onClick={() => onIncrement(counter)}
         >
           Increment
         </button>
         <button
-          onClick={() => this.props.onDelete(this.props.counter.id)}
+          onClick={() => onDelete(counter.id)}
           className="btn btn-danger btn-sm m-2"
         >
           Delete
